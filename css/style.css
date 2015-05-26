@@ -1,0 +1,17 @@
+.horizonscroll {
+    float: left;
+    height: 100%;
+    width: auto;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    
+}
+
+
+/*.scene2 {
+    float: left;
+    height: 100%;
+    
+    
+}*/
