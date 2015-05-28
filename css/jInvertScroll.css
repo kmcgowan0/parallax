@@ -9,17 +9,39 @@ body
   * important: keep position fixed, you can however use top:0 instead of bottom:0
   * if you want to make it stick to the top of the browser
   */
+
+
+
 .frontscroll {
     position: fixed;
     bottom: 0;
     left: 0;
     clear: both;
+    padding-bottom: 4%;
 }
 
-/*.video {
+.midscroll {
+    position: fixed;
+    top: 40;
+    left: 0;
+    clear: both;
+}
+
+.clip1 {
+    position: absolute;
+    left: 40%;
+    top: 90px;
+}
+
+.clip2 {
     
     position: absolute;
-    left: 1700px;
-    top: 200px;
-}*/
+    left: 83%;
+    top: 90px;
+}
+
+.building {
+    opacity: 0;
+}
+
 

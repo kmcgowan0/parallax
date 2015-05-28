@@ -22,7 +22,7 @@ $(document).ready(function() {
             $("video").fadeIn();
         }
         
-        if(scrollPosition < 2000) {
+        if(scrollPosition < 0.4000) {
             $("video").fadeOut();
         }
         
@@ -34,8 +34,24 @@ $(document).ready(function() {
     
 });
     
-    setTimeout(function(){
-    document.getElementById("ad1").play();
-}, 10000);
-    
-});   
+  $("#ad1").scroll(function() {
+
+  var window_height   = $(window).height();
+  var document_height = $(document).height();
+
+  var audio  = $('#ad1').get(0);
+  var length = 56; //seconds
+
+  var start = window_height;
+  var end   = document_height - start;
+
+  $(document).on('scroll', function () {   
+    var position = $(document).scrollTop();
+    var percent  = (position/end);
+
+    var currentTime = length*percent;
+
+    video.currentTime = currentTime;
+  });
+})();
+   

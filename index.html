@@ -9,16 +9,29 @@
             <link rel="stylesheet" href="css/style.css" />
     </head>
     
+    <!-- get video to play automatically/fullscreen
+audio play on scroll or with a delay -->
+    
     <body>
         <div class="background">
             <!--background-->
             <div class="horizonscroll">
-                <img class="scene1" src="img/Scene1-tiny-long.jpg"/>
+                <img class="scene1" src="img/bg800.jpg"/>
                   
             </div>
             <div class="midscroll">
                 <img class="building" src="img/building.png"/>
+                <!--<div class="video">-->
+                <video class="clip1"  poster="img/img.png" controls>
+                    <source src="video/clip1.mp4" type="video/mp4">
+                     Your browser does not support the video tag.
+                </video>
+                 <video class="clip2"  poster="img/img.png" controls>
+                    <source src="video/clip1.mp4" type="video/mp4">
+                     Your browser does not support the video tag.
+                </video>
                 
+            <!--</div>-->
                 
             </div>
         </div>
@@ -27,9 +40,11 @@
             <!--<audio class="silence" src="audio/silence.m4a"  autoplay></audio>
                     hide controls, five second delay-->
             <div class="audio">
-                <audio id="ad1" src="audio/ad1.mp3" controls  ></audio>
+                <audio id="ad1" src="audio/ad1.mp3" controls></audio>
             </div>
-
+            
+            
+        
             
             <div class="car">
                 <img src="img/Arrons-car-animated-vtiny.gif"/>
@@ -37,12 +52,7 @@
             </div>
               
         </div>
-        <div class="video">
-                <video controls >
-                    <source src="video/clip1.mp4" type="video/mp4">
-                     Your browser does not support the video tag.
-                </video>
-            </div>
+        
         
     
         <script src="js/jquery-1.11.2.min.js"></script>
@@ -51,7 +61,7 @@
         <script src="js/jquery.jInvertScroll.js"></script>
         <script type="text/javascript">
     (function($) {
-        $.jInvertScroll(['.frontscroll', '.horizonscroll'],        // an array containing the selector(s) for the elements you want to animate
+        $.jInvertScroll(['.frontscroll', '.midscroll', '.horizonscroll'],        // an array containing the selector(s) for the elements you want to animate
             {
             height: 12000,                   // optional: define the height the user can scroll, otherwise the overall length will be taken as scrollable height
             onScroll: function(percent) {   //optional: callback function that will be called when the user scrolls down, useful for animating other things on the page
