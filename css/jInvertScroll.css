@@ -15,7 +15,7 @@ body
 
 .frontscroll {
     position: fixed;
-    bottom: 30%;
+    bottom: 10%;
     left: 0;
     clear: both;
    
@@ -36,15 +36,18 @@ body
 }
 
 #clip1 {
-    position: absolute;
     left: 40%;
+    
     top: 90px;
+    width: 100%;
     
 }
 
 #clip2 {
     position: fixed;
     left: 83%;
+    margin-left: auto;
+    margin-right: auto;
     top: 90px;
     width: 100%;
 }

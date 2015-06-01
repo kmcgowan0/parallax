@@ -11,23 +11,31 @@ $(document).ready(function() {
     if were over 250 and hiding it again if the number is lower than that. 
     */
     $(document).scroll(function(e) {
+        $.jInvertScroll(['.frontscroll', '.midscroll', '.horizonscroll'],        // an array containing the selector(s) for the elements you want to animate
+            {
+            onScroll: function(percent) {   //optional: callback function that will be called when the user scrolls down, useful for animating other things on the page
+                console.log(percent);
+            }
+        });
         var scrollPosition = $("body").scrollTop();
+        var scrollPercentage = 100 * $(this).scrollTop() / ($('body').width() - $(this).width());
         var video = document.getElementById('clip1');
         var video2 = document.getElementById('clip2');
         var audio = document.getElementById('ad1');
         var audio2 = document.getElementById('ad2');
         console.log(scrollPosition); 
+        console.log(scrollPercentage); 
         if(scrollPosition > 50) {
             $('#ad1').get(0).play();
         }
         if(scrollPosition > 2812) {
             $('#ad1').get(0).pause();
         }
-        if(scrollPosition > 3396) {
+        if(percent > 0.3214) {
             $('#clip1').fadeIn(1000);
             $('#clip1').get(0).play();
         }
-        if(scrollPosition < 3396) {
+        if(percent < 0.3214) {
             $('#clip1').get(0).pause();
             $('#clip1').fadeOut();
         }
@@ -39,9 +47,10 @@ $(document).ready(function() {
         if(scrollPosition > 16180) {
             $('#clip2').get(0).play();
             $('#clip2').fadeIn();
-        }if(scrollPosition > 16180) {
-            $('#clip2').get(0).play();
-            $('#clip2').fadeIn();
+        }
+        if(scrollPosition < 16180) {
+            $('#clip2').get(0).pause();
+            $('#clip2').fadeOut();
         }
         if(scrollPosition < 10023) {
             $('#clip2').get(0).pause();
@@ -59,6 +68,7 @@ $(document).ready(function() {
         
         
     });
+    
     
     
 
