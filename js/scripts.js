@@ -1,12 +1,8 @@
-
 $(document).ready(function() {
+
     
-    /*
-    This hides the image that is shown later on scroll. Might be better to set 
-    up a css class for this and set the display: none; property. This might 
-    avoid seeing the content briefly before our script file loads and hides it. 
-    */
-    $(".video").hide();     
+    $('#clip1').hide();
+    $('#clip2').hide();
     
     /*
     Function that gets called every time the page is scrolled in either direction. 
@@ -15,43 +11,75 @@ $(document).ready(function() {
     if were over 250 and hiding it again if the number is lower than that. 
     */
     $(document).scroll(function(e) {
-        var scrollPosition = $("horizonscroll").scrollLeft();
+        var scrollPosition = $("body").scrollTop();
+        var video = document.getElementById('clip1');
+        var video2 = document.getElementById('clip2');
+        var audio = document.getElementById('ad1');
+        var audio2 = document.getElementById('ad2');
         console.log(scrollPosition); 
-       
-        if(scrollPosition > 1000) {
-            $("video").fadeIn();
+        if(scrollPosition > 50) {
+            $('#ad1').get(0).play();
+        }
+        if(scrollPosition > 2812) {
+            $('#ad1').get(0).pause();
+        }
+        if(scrollPosition > 3396) {
+            $('#clip1').fadeIn(1000);
+            $('#clip1').get(0).play();
+        }
+        if(scrollPosition < 3396) {
+            $('#clip1').get(0).pause();
+            $('#clip1').fadeOut();
+        }
+        //find actual scroll positions
+        if(scrollPosition > 6777) {
+            $('#clip1').get(0).pause();
+        }
+        if(scrollPosition > 10023) {
+            $('#clip2').get(0).play();
+        }
+        if(scrollPosition < 10023) {
+            $('#clip2').get(0).pause();
+        }
+        //if(scrollPosition > 5000) {
+          //  $('#clip2').get(0).pause();
+      //}
+        if(scrollPosition > 10023) {
+            $('#ad2').get(0).play();
+        }
+        if(scrollPosition < 10023) {
+            $('#ad2').get(0).pause();
         }
         
-        if(scrollPosition < 0.4000) {
-            $("video").fadeOut();
-        }
+        
         
     });
     
-        $("#ad1").scroll(function) {
-            var audio = $("")
-        }
+    
+
+    var videoElement = document.getElementById("clip1");
+    
+  function toggleFullScreen() {
+    if (!document.mozFullScreen && !document.webkitFullScreen) {
+      if (videoElement.mozRequestFullScreen) {
+        videoElement.mozRequestFullScreen();
+      } else {
+        videoElement.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+      }
+    } else {
+      if (document.mozCancelFullScreen) {
+        document.mozCancelFullScreen();
+      } else {
+        document.webkitCancelFullScreen();
+      }
+    }
+  }
+  
+  document.addEventListener("keydown", function(e) {
+    if (e.keyCode == 13) {
+      toggleFullScreen();
+        videoElement.play();
+    }
+  }, false);
     
 });
-    
-  $("#ad1").scroll(function() {
-
-  var window_height   = $(window).height();
-  var document_height = $(document).height();
-
-  var audio  = $('#ad1').get(0);
-  var length = 56; //seconds
-
-  var start = window_height;
-  var end   = document_height - start;
-
-  $(document).on('scroll', function () {   
-    var position = $(document).scrollTop();
-    var percent  = (position/end);
-
-    var currentTime = length*percent;
-
-    video.currentTime = currentTime;
-  });
-})();
-   

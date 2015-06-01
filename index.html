@@ -15,21 +15,14 @@ audio play on scroll or with a delay -->
     <body>
         <div class="background">
             <!--background-->
+
             <div class="horizonscroll">
-                <img class="scene1" src="img/bg800.jpg"/>
-                  
+                <img class="scene1" src="img/bg800-long.jpg"/>  
             </div>
             <div class="midscroll">
-                <img class="building" src="img/building.png"/>
+                <img class="building" src="img/building.png"/><!--building then move video into hidden class in front of front scroll-->
                 <!--<div class="video">-->
-                <video class="clip1"  poster="img/img.png" controls>
-                    <source src="video/clip1.mp4" type="video/mp4">
-                     Your browser does not support the video tag.
-                </video>
-                 <video class="clip2"  poster="img/img.png" controls>
-                    <source src="video/clip1.mp4" type="video/mp4">
-                     Your browser does not support the video tag.
-                </video>
+               
                 
             <!--</div>-->
                 
@@ -41,22 +34,30 @@ audio play on scroll or with a delay -->
                     hide controls, five second delay-->
             <div class="audio">
                 <audio id="ad1" src="audio/ad1.mp3" controls></audio>
+                <audio id="ad2" src="audio/ad2.mp3" controls></audio>
             </div>
-            
-            
-        
             
             <div class="car">
                 <img src="img/Arrons-car-animated-vtiny.gif"/>
-                <p></p>
             </div>
               
+        </div>
+        <div class="vidscroll">
+            <video id="clip1"  poster="img/img.png" controls>
+                    <source src="video/clip1.mp4" type="video/mp4">
+                     Your browser does not support the video tag.
+            </video>
+            <video id="clip2"  poster="img/img.png" controls>
+                    <source src="video/clip1.mp4" type="video/mp4">
+                     Your browser does not support the video tag.
+            </video>
         </div>
         
         
     
         <script src="js/jquery-1.11.2.min.js"></script>
         <script src="js/parallax.js"></script>
+        <script src="js/enquire.min.js"></script>
         <script src="js/scripts.js"></script>
         <script src="js/jquery.jInvertScroll.js"></script>
         <script type="text/javascript">
@@ -70,6 +71,22 @@ audio play on scroll or with a delay -->
         });
     }(jQuery));
         </script>
+       <!-- <script>
+            var video = document.getElementById('clip1');
+            video.addEventListener("ended", function() {
+                //alert('Ended');
+            });
+            
+            video.play();
+        </script>
+        <script>
+            var audio = document.getElementById('ad1');
+            audio.addEventListener("ended", function() {
+                //alert('Ended');
+            });
+            
+            audio.play();
+        </script>-->
         
     </body>
 </html>

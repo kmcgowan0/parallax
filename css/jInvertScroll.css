@@ -3,6 +3,7 @@ body
 {
     overflow-x: hidden;
 
+ 
 }
 
 /**
@@ -27,21 +28,29 @@ body
     clear: both;
 }
 
-.clip1 {
+.vidscroll {
+    position: fixed;
+    top: 40;
+    left: 0;
+    clear: both;
+}
+
+#clip1 {
     position: absolute;
     left: 40%;
     top: 90px;
+    
 }
 
-.clip2 {
-    
-    position: absolute;
+#clip2 {
+    position: fixed;
     left: 83%;
     top: 90px;
+    width: 80%;
 }
 
 .building {
-    opacity: 0;
+    /*opacity: 0;*/
 }
 
 
