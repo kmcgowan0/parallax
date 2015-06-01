@@ -31,12 +31,17 @@ $(document).ready(function() {
             $('#clip1').get(0).pause();
             $('#clip1').fadeOut();
         }
-        //find actual scroll positions
-        if(scrollPosition > 6777) {
+        if(scrollPosition > 10390) {
             $('#clip1').get(0).pause();
+            $('#clip1').hide();
         }
-        if(scrollPosition > 10023) {
+        //find actual scroll positions
+        if(scrollPosition > 16180) {
             $('#clip2').get(0).play();
+            $('#clip2').fadeIn();
+        }if(scrollPosition > 16180) {
+            $('#clip2').get(0).play();
+            $('#clip2').fadeIn();
         }
         if(scrollPosition < 10023) {
             $('#clip2').get(0).pause();
