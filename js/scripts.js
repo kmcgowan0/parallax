@@ -11,12 +11,7 @@ $(document).ready(function() {
     if were over 250 and hiding it again if the number is lower than that. 
     */
     $(document).scroll(function(e) {
-        $.jInvertScroll(['.frontscroll', '.midscroll', '.horizonscroll'],        // an array containing the selector(s) for the elements you want to animate
-            {
-            onScroll: function(percent) {   //optional: callback function that will be called when the user scrolls down, useful for animating other things on the page
-                console.log(percent);
-            }
-        });
+       
         var scrollPosition = $("body").scrollTop();
         var scrollPercentage = 100 * $(this).scrollTop() / ($('body').width() - $(this).width());
         var video = document.getElementById('clip1');
@@ -31,15 +26,15 @@ $(document).ready(function() {
         if(scrollPosition > 2812) {
             $('#ad1').get(0).pause();
         }
-        if(percent > 0.3214) {
+        if(scrollPercentage < -17600) {
             $('#clip1').fadeIn(1000);
             $('#clip1').get(0).play();
         }
-        if(percent < 0.3214) {
+        if(scrollPercentage > -17600) {
             $('#clip1').get(0).pause();
             $('#clip1').fadeOut();
         }
-        if(scrollPosition > 10390) {
+        if(scrollPercentage < -29350) {
             $('#clip1').get(0).pause();
             $('#clip1').hide();
         }
