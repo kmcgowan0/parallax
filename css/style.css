@@ -5,7 +5,22 @@
     position: fixed;
     bottom: 0;
     left: 0;
-    
+}
+
+@media screen and (max-height: 800px){
+    .scene1 {    
+        content:url("../img/bg800-long.jpg");
+    }
+}
+@media screen and (max-height: 1000px){
+    .scene1 {    
+        content:url("../img/bg1000-long.jpg");
+    }
+}
+/*@media screen and (max-height: 1700px){
+    .scene1 {    
+        content:url("../img/bg1700-long.jpg");
+    }
 }
 
 
