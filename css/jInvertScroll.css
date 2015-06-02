@@ -23,9 +23,9 @@ body
 
 .midscroll {
     position: fixed;
-    top: 40;
-    left: 0;
-    clear: both;
+    
+    
+    
 }
 
 .vidscroll {
@@ -52,8 +52,11 @@ body
     width: 100%;
 }
 
-.building {
-    /*opacity: 0;*/
+#building {
+    width: 60%;
+    left: 40%;
+    padding-bottom: 30%;
+    
 }
 
 
