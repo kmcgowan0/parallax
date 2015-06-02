@@ -1,3 +1,5 @@
+
+
 $(document).ready(function() {
 
     
@@ -20,7 +22,7 @@ $(document).ready(function() {
         var audio2 = document.getElementById('ad2');
         console.log(scrollPosition); 
         console.log(scrollPercentage); 
-        if(scrollPosition > 50) {
+                if(scrollPosition > 50) {
             $('#ad1').get(0).play();
         }
         if(scrollPosition > 2812) {
@@ -59,7 +61,6 @@ $(document).ready(function() {
         if(scrollPosition < 10023) {
             $('#ad2').get(0).pause();
         }
-        
         
         
     });
