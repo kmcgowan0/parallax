@@ -17,21 +17,40 @@ audio play on scroll or with a delay -->
             <!--background-->
 
             <div class="horizonscroll">
-                <img class="scene1" src="img/bg1300-long-.jpg"/>  
-            </div>
-            <div class="midscroll">
-                <img id="building" src="img/warehouse.png"/>
-                <video id="clip1"  poster="img/img.png" controls>
+                <img class="scene1" src="img/bg1300-long2.jpg"/>  
+                 <video id="clip1"  poster="img/window.png" controls>
                     <source src="video/clip1.mp4" type="video/mp4">
                      Your browser does not support the video tag.
             </video>
-                <img class="trevor" src="img/trevorbg.png"/><!--building then move video into hidden class in front of front scroll-->
+                <video id="clip2"  poster="img/img.png" controls>
+                    <source src="video/clip2.mp4" type="video/mp4">
+                     Your browser does not support the video tag.
+            </video>
+                <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="icon">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u="><img id="fb" src="img/fb144.png"/></a>
+                </div>
+                <div class="twitter-button">
+                    <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Check%20out%20Trevors%20STD!" data-size="large"><img class="twitter" src="img/twitter.png"/></a>
+                </div>
+            </div>
+            
+            <div class="midscroll">
+                
+                
+                     
+                     <!--<div class="vidscroll">-->
+           
+            
+       <!-- </div>
+                
+                <!--<img class="trevor" src="img/trevorbg.png"/><!--building then move video into hidden class in front of front scroll-->
                 <!--<div class="video">-->
                
                 
             <!--</div>-->
                 
             </div>
+           
         </div>
         <!--scrolling elements-->
         <div class="frontscroll">
@@ -39,7 +58,6 @@ audio play on scroll or with a delay -->
                     hide controls, five second delay-->
             <div class="audio">
                 <audio id="ad1" src="audio/ad1.mp3" controls></audio>
-                <audio id="ad2" src="audio/ad2.mp3" controls></audio>
             </div>
             
             <div class="car">
@@ -47,13 +65,7 @@ audio play on scroll or with a delay -->
             </div>
               
         </div>
-        <div class="vidscroll">
-            
-            <video id="clip2"  poster="img/img.png" controls>
-                    <source src="video/clip1.mp4" type="video/mp4">
-                     Your browser does not support the video tag.
-            </video>
-        </div>
+        
         
         
     
@@ -64,7 +76,7 @@ audio play on scroll or with a delay -->
         <script src="js/jquery.jInvertScroll.js"></script>
         <script type="text/javascript">
             (function($) {
-                $.jInvertScroll(['.frontscroll', '.midscroll', '.horizonscroll'],        // an array containing the selector(s) for the elements you want to animate
+                $.jInvertScroll(['.frontscroll', '.midscroll', '.horizonscroll', '.vidscroll'],        // an array containing the selector(s) for the elements you want to animate
                     {
                     //height: 12000,                   // optional: define the height the user can scroll, otherwise the overall length will be taken as scrollable height
                     onScroll: function(percent) {   //optional: callback function that will be called when the user scrolls down, useful for animating other things on the page
@@ -73,6 +85,8 @@ audio play on scroll or with a delay -->
                 });
             }(jQuery));
         </script>
+
+
        <!-- <script>
             var video = document.getElementById('clip1');
             video.addEventListener("ended", function() {
