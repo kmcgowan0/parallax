@@ -4,7 +4,7 @@ $(document).ready(function() {
 
     
     $('#clip1').hide();
-    $('#clip2').hide();
+        //$('#clip2').hide();
     
     /*
     Function that gets called every time the page is scrolled in either direction. 
@@ -15,11 +15,10 @@ $(document).ready(function() {
     $(document).scroll(function(e) {
        
         var scrollPosition = $("body").scrollTop();
-        var scrollPercentage = 100 * $(this).scrollTop() / ($('body').width() - $(this).width());
+        var scrollPercentage = 100 * $(this).scrollTop() / ($(this).width() - $('body').width());
         var video = document.getElementById('clip1');
         var video2 = document.getElementById('clip2');
         var audio = document.getElementById('ad1');
-        var audio2 = document.getElementById('ad2');
         console.log(scrollPosition); 
         console.log(scrollPercentage); 
                 if(scrollPosition > 50) {
@@ -28,39 +27,35 @@ $(document).ready(function() {
         if(scrollPosition > 2812) {
             $('#ad1').get(0).pause();
         }
-        if(scrollPercentage < -17600) {
+        if(scrollPercentage > 25100) {
             $('#clip1').fadeIn(1000);
             $('#clip1').get(0).play();
         }
-        if(scrollPercentage > -17600) {
+        if(scrollPercentage < 25100) {
             $('#clip1').get(0).pause();
-            $('#clip1').fadeOut();
+            //$('#clip1').fadeOut();
         }
-        if(scrollPercentage < -29350) {
+        if(scrollPercentage > 34050) {
             $('#clip1').get(0).pause();
-            $('#clip1').hide();
+           // $('#clip1').hide();
         }
         //find actual scroll positions
-        if(scrollPosition > 16180) {
-            $('#clip2').get(0).play();
+        if(scrollPercentage > 57825) {
             $('#clip2').fadeIn();
+            $('#clip2').get(0).play();
+            
         }
-        if(scrollPosition < 16180) {
+        if(scrollPercentage < 57825) {
             $('#clip2').get(0).pause();
             $('#clip2').fadeOut();
         }
-        if(scrollPosition < 10023) {
+        if(scrollPosition < 69081) {
             $('#clip2').get(0).pause();
         }
         //if(scrollPosition > 5000) {
           //  $('#clip2').get(0).pause();
       //}
-        if(scrollPosition > 10023) {
-            $('#ad2').get(0).play();
-        }
-        if(scrollPosition < 10023) {
-            $('#ad2').get(0).pause();
-        }
+       
         
         
     });
@@ -69,13 +64,33 @@ $(document).ready(function() {
     
 
     var videoElement = document.getElementById("clip1");
+    var videoElement2 = document.getElementById("clip2");
     
   function toggleFullScreen() {
     if (!document.mozFullScreen && !document.webkitFullScreen) {
       if (videoElement.mozRequestFullScreen) {
         videoElement.mozRequestFullScreen();
+          
       } else {
         videoElement.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+          
+      }
+    } else {
+      if (document.mozCancelFullScreen) {
+        document.mozCancelFullScreen();
+      } else {
+        document.webkitCancelFullScreen();
+      }
+    }
+  }
+    function toggleFullScreen() {
+    if (!document.mozFullScreen && !document.webkitFullScreen) {
+      if (videoElement2.mozRequestFullScreen) {
+        videoElement2.mozRequestFullScreen();
+          
+      } else {
+        videoElement2.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+          
       }
     } else {
       if (document.mozCancelFullScreen) {
@@ -89,8 +104,12 @@ $(document).ready(function() {
   document.addEventListener("keydown", function(e) {
     if (e.keyCode == 13) {
       toggleFullScreen();
-        videoElement.play();
+        videoElement.get(0).play();
     }
+      if (e.keyCode == 32) {
+          toggleFullScreen();
+          videoElement2.get(0).play();
+      }
   }, false);
     
 });
