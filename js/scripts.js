@@ -21,7 +21,7 @@ $(document).ready(function() {
         var audio = document.getElementById('ad1');
         console.log(scrollPosition); 
         console.log(scrollPercentage); 
-                if(scrollPosition > 50) {
+        if(scrollPosition > 50) {
             $('#ad1').get(0).play();
         }
         if(scrollPosition > 2812) {
@@ -41,13 +41,12 @@ $(document).ready(function() {
         }
         //find actual scroll positions
         if(scrollPercentage > 57825) {
-            $('#clip2').fadeIn();
+           // $('#clip2').fadeIn(1000);
             $('#clip2').get(0).play();
-            
         }
         if(scrollPercentage < 57825) {
             $('#clip2').get(0).pause();
-            $('#clip2').fadeOut();
+            //$('#clip2').fadeOut();
         }
         if(scrollPosition < 69081) {
             $('#clip2').get(0).pause();
@@ -55,7 +54,7 @@ $(document).ready(function() {
         //if(scrollPosition > 5000) {
           //  $('#clip2').get(0).pause();
       //}
-       
+        
         
         
     });
@@ -106,10 +105,12 @@ $(document).ready(function() {
       toggleFullScreen();
         videoElement.get(0).play();
     }
+     
       if (e.keyCode == 32) {
           toggleFullScreen();
           videoElement2.get(0).play();
       }
+      
   }, false);
     
 });
