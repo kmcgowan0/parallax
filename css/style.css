@@ -8,17 +8,23 @@
     background-size: cover;
 }
 
-/*@media screen and (max-height: 800px){
+@media screen and (max-height: 768px){
     .scene1 {    
-        content:url("../img/bg800-long.jpg");
+        content:url("../img/ipadbg2.jpg");
     }
     .car {
         content:url("../img/Arrons-car-animated-vtiny.gif");
     }
+    #clip1 {
+        height: 760px;
+    }
+    #clip2 {
+        height: 760px;
+    }
 }
 @media screen and (max-height: 1000px){
     .scene1 {    
-        content:url("../img/bg1000-long.jpg");
+        content:url("../img/bg1000.jpg");
     }
     .car {
         content:url("../img/Arrons-car-animated-vtiny.gif");
