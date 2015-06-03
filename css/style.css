@@ -22,14 +22,14 @@
         height: 760px;
     }
 }
-@media screen and (max-height: 1000px){
+/*@media screen and (max-height: 1000px){
     .scene1 {    
         content:url("../img/bg1000.jpg");
     }
     .car {
         content:url("../img/Arrons-car-animated-vtiny.gif");
     }
-}
+}*/ 
 @media screen and (max-height: 1700px){
     .car {
         content:url("../img/Arrons-car-animated-tiny.gif");
