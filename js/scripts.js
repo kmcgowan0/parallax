@@ -48,7 +48,7 @@ $(document).ready(function() {
             $('#clip2').get(0).pause();
             //$('#clip2').fadeOut();
         }
-        if(scrollPosition < 69081) {
+        if(scrollPercentage < 69081) {
             $('#clip2').get(0).pause();
         }
         //if(scrollPosition > 5000) {
